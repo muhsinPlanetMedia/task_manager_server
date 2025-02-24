@@ -19,8 +19,8 @@ Future<Response> onRequest(RequestContext context) async {
     );
   }
 }
-Response _getAllTasks() {
-  final tasks = taskService.getAllTasks();
+Future<Response> _getAllTasks() async {
+  final tasks =await taskService.getAllTasks();
   return Response.json(
     statusCode: 200,
     body: {'tasks': tasks.map((task) => task.toMap()).toList()},

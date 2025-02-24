@@ -36,7 +36,7 @@ Future<Response> _createTask(RequestContext context) async {
     );
   }
 
-  final task = taskService.createTask(title, description);
+  final task =await taskService.createTask(title, description);
 
   return Response.json(
     statusCode: 201,
@@ -61,7 +61,7 @@ Future<Response> _updateTask(RequestContext context) async {
     );
   }
 
-  final updatedTask = taskService.updateTask(id, title: title, description: description, isCompleted: isCompleted);
+  final updatedTask =await taskService.updateTask(id, title: title, description: description, isCompleted: isCompleted);
 
   if (updatedTask == null) {
     return Response.json(

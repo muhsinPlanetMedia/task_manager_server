@@ -6,6 +6,7 @@ import 'dart:io';
 import 'package:dart_frog/dart_frog.dart';
 
 
+import '../routes/timer.dart' as timer;
 import '../routes/tasks.dart' as tasks;
 import '../routes/task.dart' as task;
 import '../routes/register.dart' as register;
@@ -34,7 +35,7 @@ Handler buildRootHandler() {
 Handler buildHandler() {
   final pipeline = const Pipeline();
   final router = Router()
-    ..all('/tasks', (context) => tasks.onRequest(context,))..all('/task', (context) => task.onRequest(context,))..all('/register', (context) => register.onRequest(context,))..all('/login', (context) => login.onRequest(context,))..all('/', (context) => index.onRequest(context,));
+    ..all('/timer', (context) => timer.onRequest(context,))..all('/tasks', (context) => tasks.onRequest(context,))..all('/task', (context) => task.onRequest(context,))..all('/register', (context) => register.onRequest(context,))..all('/login', (context) => login.onRequest(context,))..all('/', (context) => index.onRequest(context,));
   return pipeline.addHandler(router);
 }
 

@@ -23,7 +23,7 @@ class Task {
   }
 
   // Create Task from JSON (for request body)
-  factory Task.fromMap(Map<String, dynamic> map) {
+  factory Task.fromMap(map) {
     return Task(
       id: map['id'] as String,
       title: map['title'] as String,
